@@ -6,7 +6,7 @@
 /*   By: lstephen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 02:55:42 by lstephen          #+#    #+#             */
-/*   Updated: 2024/04/21 03:05:30 by darkwater        ###   ########.fr       */
+/*   Updated: 2024/04/21 03:27:37 by darkwater        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,13 @@ void	bonus_tests(int *bytes_written, int *printf_bytes)
 	fflush(stdout);
 }
 
+void	error_tests(int *bytes_written)
+{
+	ft_printf("\n\n\nError Print Test\n\n");
+	ft_printf("My function:\n");
+	*bytes_written += ft_printf("Char: %c, String: %s, Pointer: %p, Decimal: %d, Integer: %i, Unsigned: %u, Hex Lower: %x, Hex Upper: %X, Percent %%%", 'L', "Hey There ;)", bytes_written, 257, 8392, -1239, 9278, 9278);
+}
+
 int	main(void)
 {
 	int	bytes_written;
@@ -166,9 +173,10 @@ int	main(void)
 	unsigned_tests(&bytes_written, &printf_bytes);
 	hex_lower_tests(&bytes_written, &printf_bytes);
 	hex_upper_tests(&bytes_written, &printf_bytes);*/
-	pointer_tests(&bytes_written, &printf_bytes);
+	//pointer_tests(&bytes_written, &printf_bytes);
 	/*generic_tests(&bytes_written, &printf_bytes);
 	bonus_tests(&bytes_written, &printf_bytes);*/
+	error_tests(&bytes_written);
 	printf("\n\nMy function bytes written: %d\n", bytes_written);
 	printf("Inbuilt function bytes written: %d\n", printf_bytes);
 	return (0);
