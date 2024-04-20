@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    testing_Makefile                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: lstephen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 02:06:28 by lstephen          #+#    #+#              #
-#    Updated: 2024/04/21 01:20:11 by darkwater        ###   ########.fr        #
+#    Updated: 2024/04/21 02:45:05 by darkwater        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= libftprintf.a
+NAME			= test_libftprintf.a
 
 SRC				= ft_printf.c			\
 				  ft_printf_char.c		\
@@ -19,8 +19,7 @@ SRC				= ft_printf.c			\
 				  ft_printf_ptr.c		\
 				  ft_printf_str.c		\
 				  ft_printf_unsigned.c	\
-
-#BONUS			= 
+				  main.c				\
 
 OBJS			= $(SRC:.c=.o)
 
@@ -35,8 +34,6 @@ LIBFT_PRE		= $(addprefix $(LIBFT_DIR), $(LIBFT))
 CC				= cc
 
 CFLAGS			= -Wall -Wextra -Werror -Wpedantic
-
-AR				= ar -crs
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Colours  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 
@@ -61,17 +58,17 @@ FCLEAN_MSG		= echo "\n ~ ~ ~ $(RED)Removing Programs$(NC) ~ ~ ~\n"
 all: $(NAME)
 
 $(NAME): $(LIBFT_PRE) $(OBJS)
-	@$(PROGRAM_COMP)
-	$(AR) $(NAME) $(OBJS)
+	@$(PROGRAM_COMP) 
+	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
 
 $(LIBFT_PRE):
-	@$(MAKE) -C $(LIBFT_DIR)
-	@cp $(LIBFT_PRE) .
-	@mv $(LIBFT) $(NAME)
+	$(MAKE) -C $(LIBFT_DIR)
 	@$(BEGIN_COMP)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -I $(HEADER) $< -o $@
+
+bonus:
 
 clean:
 	@$(MAKE) clean -C $(LIBFT_DIR)
@@ -85,4 +82,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
