@@ -6,7 +6,7 @@
 #    By: lstephen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 02:06:28 by lstephen          #+#    #+#              #
-#    Updated: 2024/04/19 23:43:42 by lstephen         ###   ########.fr        #
+#    Updated: 2024/04/23 15:09:47 by lstephen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,8 @@ FCLEAN_MSG		= echo "\n ~ ~ ~ $(RED)Removing Programs$(NC) ~ ~ ~\n"
 
 all: $(NAME)
 
+bonus: all
+
 $(NAME): $(LIBFT_PRE)  $(OBJS)
 	@$(PROGRAM_COMP)
 	$(AR) $(NAME) $(OBJS)
@@ -86,4 +88,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
