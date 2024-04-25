@@ -6,7 +6,7 @@
 /*   By: lstephen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 02:55:42 by lstephen          #+#    #+#             */
-/*   Updated: 2024/04/21 03:27:37 by darkwater        ###   ########.fr       */
+/*   Updated: 2024/04/26 04:19:50 by darkwater        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	generic_tests(int *bytes_written, int *printf_bytes)
 // '-', '0', '.', '#', ' ', '+'
 void	bonus_tests(int *bytes_written, int *printf_bytes)
 {
-	ft_printf("\n\t~ ~ ~ Bonus Flags Print Test ~ ~ ~\n");
+	ft_printf("\n\n\n\t~ ~ ~ Bonus Flags Print Test ~ ~ ~\n");
 	ft_printf("\nFlag: '-'\t(Testing: '%%-6...')\n");
 	ft_printf("\nPrintf Output:\n");
 	*printf_bytes += printf("%-6d %-6i %-6d", 86123, -2147483647, 0);
@@ -167,16 +167,16 @@ int	main(void)
 
 	bytes_written = 0;
 	printf_bytes = 0;
-/*	character_tests(&bytes_written, &printf_bytes);
+	character_tests(&bytes_written, &printf_bytes);
 	string_tests(&bytes_written, &printf_bytes);
 	integer_tests(&bytes_written, &printf_bytes);
 	unsigned_tests(&bytes_written, &printf_bytes);
 	hex_lower_tests(&bytes_written, &printf_bytes);
-	hex_upper_tests(&bytes_written, &printf_bytes);*/
-	//pointer_tests(&bytes_written, &printf_bytes);
-	/*generic_tests(&bytes_written, &printf_bytes);
-	bonus_tests(&bytes_written, &printf_bytes);*/
-	error_tests(&bytes_written);
+	hex_upper_tests(&bytes_written, &printf_bytes);
+	pointer_tests(&bytes_written, &printf_bytes);
+	generic_tests(&bytes_written, &printf_bytes);
+	bonus_tests(&bytes_written, &printf_bytes);
+//	error_tests(&bytes_written);
 	printf("\n\nMy function bytes written: %d\n", bytes_written);
 	printf("Inbuilt function bytes written: %d\n", printf_bytes);
 	return (0);

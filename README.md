@@ -10,18 +10,14 @@
 
 <p>The project requirements:</p>
 
-<ul>
-<li>Don't implement original printf buffer management</li>
-<li>Handle the conversions `cspdiuxX%`</li>
-<li>Output will be compared to original printf()</li>
-</ul>
+- Don't implement original printf buffer management
+- Handle the conversions `cspdiuxX%`
+- Output will be compared to original printf()
 
 <p>Bonus requirements:</p>
 
-<ul>
-<li>Manage a combination of the flags `-0.` and field minimum width</li>
-<li>Mange flags `# +`</li>
-</ul>
+- Manage a combination of the flags `-0.` and field minimum width
+- Mange flags `# +`
 
 <h3>Testing ft_printf functions</h3>
 

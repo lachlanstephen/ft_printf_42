@@ -6,11 +6,11 @@
 #    By: lstephen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 02:06:28 by lstephen          #+#    #+#              #
-#    Updated: 2024/04/21 02:45:05 by darkwater        ###   ########.fr        #
+#    Updated: 2024/04/26 04:18:18 by darkwater        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= test_libftprintf.a
+NAME			= test_libftprintf
 
 SRC				= ft_printf.c			\
 				  ft_printf_char.c		\
