@@ -4,11 +4,9 @@
 
 <p><i>Note</i>: I'm currently working on the bonuses, so this repo wouldn't be able to be submitted as is.</p>
 
-<p>ft_printf, one of three projects in Ring 1 of the 42 Cursus, introduced us to the idea of variadic functions, as in functions that take in a variable amount of arguments.</p>
+<p>ft_printf, one of three projects in Ring 1 of the 42 Cursus, introduced us to the idea of variadic functions: functions that take in a variable amount of arguments. Our task was to write a library that contains a recreation of printf from \<stdio.h\> in the Standard C Library.</p>
 
-<p>Our task was to write a library that contains a recreation of printf from <stdio.h> in the Standard C Library</p>
-
-<p>The project requirements:</p>
+<p>Mandatory requirements:</p>
 
 - Don't implement original printf buffer management
 - Handle the conversions `cspdiuxX%`
@@ -17,7 +15,7 @@
 <p>Bonus requirements:</p>
 
 - Manage a combination of the flags `-0.` and field minimum width
-- Mange flags `# +`
+- Manage flags `# +` (one is a space)
 
 <h3>Testing ft_printf functions</h3>
 
