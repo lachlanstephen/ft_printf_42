@@ -6,7 +6,7 @@
 #    By: lstephen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 02:06:28 by lstephen          #+#    #+#              #
-#    Updated: 2024/04/21 01:20:11 by darkwater        ###   ########.fr        #
+#    Updated: 2024/04/23 15:09:47 by lstephen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ LIBFT_PRE		= $(addprefix $(LIBFT_DIR), $(LIBFT))
 
 CC				= cc
 
-CFLAGS			= -Wall -Wextra -Werror -Wpedantic
+CFLAGS			= -g -Wall -Wextra -Werror -Wpedantic
 
 AR				= ar -crs
 
@@ -60,11 +60,14 @@ FCLEAN_MSG		= echo "\n ~ ~ ~ $(RED)Removing Programs$(NC) ~ ~ ~\n"
 
 all: $(NAME)
 
-$(NAME): $(LIBFT_PRE) $(OBJS)
+bonus: all
+
+$(NAME): $(LIBFT_PRE)  $(OBJS)
 	@$(PROGRAM_COMP)
 	$(AR) $(NAME) $(OBJS)
 
 $(LIBFT_PRE):
+	@$(BEGIN_LIBFT)
 	@$(MAKE) -C $(LIBFT_DIR)
 	@cp $(LIBFT_PRE) .
 	@mv $(LIBFT) $(NAME)
@@ -85,4 +88,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re

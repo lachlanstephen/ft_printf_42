@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:30:37 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/21 03:04:36 by darkwater        ###   ########.fr       */
+/*   Updated: 2024/04/26 04:13:48 by darkwater        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	ft_printf_ptr(void *ptr)
 {
 	size_t	count;
 
-	if (ptr == NULL)
-		return (write(1, "(nil)", 5), 5);
+//	if (ptr == NULL)
+//		return (write(1, "(nil)", 5), 5);
 	count = 2;
 	write(1, "0x", 2);
 	count += prn_ptr_hex((unsigned long)ptr);
