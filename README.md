@@ -37,6 +37,12 @@ make re -f testing_Makefile
 
 **_Important_: Make sure to run `make fclean -f testing_Makefile` to clean up files before submitting for evaluation.**
 
+<p>To change the specifier my program tests:</p>
+
+1. Edit the `int main(void)` function in `main.c`
+2. Comment out the currently active tests (with `//`)
+3. Uncomment desired test and recompile as above
+
 <h3>Future Use of ft_printf</h3>
 
 <p>ft_printf can be added to your libft project folder to be used in future projects</p>
@@ -44,6 +50,7 @@ make re -f testing_Makefile
 <h4>Plan for repository</h4>
 
 - [ ] Complete bonus flag functionality
+- [ ] Create test function for bonus flags
 - [ ] Re-evaluate project with bonuses
-- [ ] Return whether diff of output is same or different
+- [ ] Return whether diff of output is same or different from expected
 
